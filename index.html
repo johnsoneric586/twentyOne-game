@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TwentyOne!</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="modal">
+      <h1>TwentyOne!</h1>
+      <p class="rules">
+        Roll the dice. Try to get as close to 21 as you can. If your current
+        score exceeds 21, you earn no points and the next player gets to roll.
+        If you want to save your score, select "hold." First player to 100 wins!
+        💯
+      </p>
+      <button class="btn lets-play">Let's Play!</button>
+    </div>
+    <div class="overlay"></div>
+
+    <main>
+      <button class="btn new-game">🔄 New Game</button>
+      <button class="btn btn-how-to-play">❓ How to Play</button>
+      <section class="player player-0 active-player">
+        <h2>Player 1</h2>
+        <h3>Score</h3>
+        <span id="total-score0" class="total-score">50</span>
+
+        <div class="current-score-container">
+          <h4>Current</h4>
+          <span id="current-score-0" class="current-score">25</span>
+        </div>
+      </section>
+
+      <section class="player player-1">
+        <h2>Player 2</h2>
+        <h3>Score</h3>
+        <span id="total-score1" class="total-score">50</span>
+
+        <div class="current-score-container">
+          <h4>Current</h4>
+          <span id="current-score-1" class="current-score">25</span>
+        </div>
+      </section>
+
+      <img src="assets/dice-6.png" alt="An image of the dice" class="dice" />
+      <button class="btn roll-dice">🎲 Roll Dice</button>
+      <button class="btn hold">🛑 Hold</button>
+    </main>
+  </body>
+  <script src="script.js"></script>
+</html>

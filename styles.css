@@ -1,0 +1,237 @@
+:root {
+  /* -----Custom Properties----- */
+
+  /* ---Colors--- */
+  --color-white: #f1faee;
+  --color-red: rgb(230, 57, 70, 0.75);
+  --color-light-blue: #a8dadc;
+  --color-blue: #457b9d;
+  --color-dark-blue: #1d3557;
+  --color-transparent-white1: rgba(241, 250, 238, 0.25);
+  --color-transparent-white2: rgba(241, 250, 238, 0.75);
+
+  /* ---Spacing--- */
+  --spacing-sm: 6px;
+  --spacing-md: 12px;
+  --spacing-lg: 24px;
+  --spacing-xl: 48px;
+  --spacing-2xl: 96px;
+
+  /* ---Font sizes--- */
+  --font-sm: 8px;
+  --font-md: 16px;
+  --font-lg: 24px;
+  --font-xl: 32px;
+  --font-2xl: 48px;
+
+  /* ---Gradients--- */
+  --primary-gradient: linear-gradient(
+    90deg,
+    hsla(242, 58%, 73%, 1) 0%,
+    hsla(157, 72%, 82%, 1) 100%
+  );
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0 var(--spacing-md);
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Play', sans-serif;
+  position: relative;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 80%;
+  width: 80%;
+  background-color: var(--color-white);
+  position: absolute;
+  z-index: 2;
+  color: var(--color-dark-blue);
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 20px;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  z-index: 1;
+  position: absolute;
+  top: 0;
+}
+
+.modal h1 {
+  font-size: var(--font-2xl);
+  position: absolute;
+  top: 10%;
+}
+
+.rules {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--font-lg);
+  margin: 0 var(--spacing-xl);
+  line-height: 1.5;
+}
+
+.modal .lets-play {
+  bottom: 15%;
+  background-color: var(--color-dark-blue);
+  color: var(--color-white);
+}
+
+.btn {
+  font-family: 'Play', sans-serif;
+  border: none;
+  border-radius: 20px;
+  font-size: var(--font-lg);
+  background-color: var(--color-white);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  position: absolute;
+  transition: transform 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+h1 {
+  font-size: var(--font-xl);
+  padding: var(--spacing-md) 0;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0 0 var(--spacing-md) 0;
+}
+
+.new-game {
+  left: 42.5%;
+  top: 3%;
+}
+
+.btn-how-to-play {
+  top: 3%;
+  right: 3%;
+}
+
+/* ------------------- */
+main {
+  display: flex;
+  height: 90%;
+  width: 100%;
+  position: relative;
+  padding: calc(var(--spacing-xl) + 30px) 0 0 0;
+}
+
+section {
+  width: 50%;
+  height: 85%;
+  margin: 0 var(--spacing-md);
+  padding: var(--spacing-lg) 0;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-transparent-white1);
+}
+
+h2 {
+  font-size: var(--font-2xl);
+  font-weight: lighter;
+  color: var(--color-red);
+}
+
+h3 {
+  font-size: var(--font-2xl);
+  /* font-weight: lighter; */
+  padding: var(--spacing-xl) 0 var(--spacing-md) 0;
+  color: var(--color-red);
+}
+
+.total-score {
+  font-size: var(--font-2xl);
+  color: var(--color-red);
+}
+
+.current-score-container {
+  margin: var(--spacing-2xl) 0 0 0;
+  padding: var(--spacing-lg);
+  font-size: var(--font-xl);
+  text-align: center;
+  width: 50%;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.current-score {
+  display: inline-block;
+  padding: var(--spacing-lg) 0 0 0;
+  font-size: var(--font-2xl);
+}
+
+.dice {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  left: 46.5%;
+  top: 50%;
+  animation: bounce 2s ease infinite;
+}
+
+/* Dice animation */
+@keyframes bounce {
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.roll-dice {
+  bottom: 0%;
+  left: 43.5%;
+  bottom: 20%;
+}
+
+.hold {
+  bottom: 0%;
+  left: 45%;
+  bottom: 11%;
+}
+
+/* -----State classes----- */
+.active-player {
+  background-color: var(--color-transparent-white2);
+}
+
+/* This class will be used to hide elements with JS */
+.hidden {
+  display: none;
+}
+
+.winner {
+  background-color: #b7e4c7;
+}
